@@ -7,15 +7,19 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
   color: #333;
+  position: relative;
+  overflow-x: hidden;
 }
 
 header {
-  background-color: #333;
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 15px;
   text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
 }
 
 nav ul {
@@ -35,15 +39,18 @@ nav ul li a {
 section {
   padding: 40px 20px;
   margin: 20px 0;
+  position: relative;
 }
 
 h1, h2 {
-  color: #333;
+  color: white;
 }
 
 .container {
   width: 80%;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .projets-list {
@@ -53,11 +60,12 @@ h1, h2 {
 }
 
 .projet {
-  background-color: white;
+  background-color: rgba(0, 0, 0.1);
   padding: 20px;
   margin: 10px;
   width: 45%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0.1);
+  z-index: 1;
 }
 
 ul {
@@ -74,7 +82,7 @@ form {
 }
 
 form label {
-  margin: 10px 0 5px;
+  margin: 10px 0;
 }
 
 form input, form textarea {
@@ -87,7 +95,6 @@ form input, form textarea {
 form button {
   padding: 10px;
   background-color: #333;
-  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -98,11 +105,57 @@ form button:hover {
 }
 
 footer {
-  background-color: #333;
+  background-color: rgba(0, 0, 0.5);
   color: white;
   text-align: center;
   padding: 10px;
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+/* Stylise la vidéo en arrière */
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#accueil {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: rgba(0, 0, 0.5);
+  z-index: 1;
+}
+
+#accueil .container {
+  position: relative;
+  z-index: 1;
+}
+
+#accueil .bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#accueil .container {
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px 20px;
+}
+
+#accueil .container h1, #accueil .container p {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
